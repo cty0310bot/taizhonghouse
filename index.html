@@ -26,11 +26,12 @@ data.forEach(function(m){
   var c=L.circleMarker([m.lat,m.lon],{
     radius:9,fillColor:m.color,color:'#fff',weight:2,opacity:1,fillOpacity:.88
   });
+  var src=m.url.indexOf('housefun')>-1?'好房網':m.url.indexOf('rakuya')>-1?'樂屋網':m.url.indexOf('yes319')>-1?'yes319':'591';
   c.bindPopup('<div class="lp"><a href="'+m.url+'" target="_blank">'+m.name+'</a><br>'+
     '<b>'+m.addr+' · '+m.sec+'</b><br>'+
     '總價 '+m.price+'　單價 '+m.unit+'<br>'+
     '樓層 '+m.floor+'　坪數 '+m.area+(m.age?'　屋齡 '+m.age:'')+'<br>'+
-    '<span style="color:'+m.color+';font-weight:bold">'+m.cond+'</span></div>');
+    '來源 <b>'+src+'</b>　<span style="color:'+m.color+';font-weight:bold">'+m.cond+'</span></div>');
   c.addTo(map);
 });
 
