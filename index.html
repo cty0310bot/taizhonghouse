@@ -30,8 +30,8 @@ data.forEach(function(m){
   c.bindPopup('<div class="lp"><a href="'+m.url+'" target="_blank">'+m.name+'</a><br>'+
     '<b>'+m.addr+' · '+m.sec+'</b><br>'+
     '總價 '+m.price+'　單價 '+m.unit+'<br>'+
-    '樓層 '+m.floor+'　坪數 '+m.area+'　屋齡 '+(m.age||'—')+'<br>'+
-    '來源 <b>'+src+'</b>　<span style="color:'+m.color+';font-weight:bold">'+m.cond+'</span></div>');
+    '樓層 '+m.floor+'　權狀 '+m.area+(m.indoor?'　室內 '+m.indoor:'')+'<br>'+
+    '屋齡 '+(m.age||'—')+'　來源 <b>'+src+'</b>　<span style="color:'+m.color+';font-weight:bold">'+m.cond+'</span></div>');
   c.addTo(map);
 });
 
